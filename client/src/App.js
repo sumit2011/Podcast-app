@@ -31,17 +31,23 @@ function App() {
       
       <BrowserRouter>
       <Container>
-        <Sidebar
+        {menuOpen && (
+          <Sidebar
           menuOpen={menuOpen}
           setMenuOpen= {setMenuOpen}
           setDarkMode = {setDarkMode}
           darkMode = {darkMode}
-        />
+          />
+
+        )}
+        
         <Frame>
           <Navbar
             menuOpen={menuOpen}
             setMenuOpen= {setMenuOpen}
           />
+
+          
         Podstream
         </Frame>
         

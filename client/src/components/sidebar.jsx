@@ -67,6 +67,7 @@ const Elements = styled.div`
     
     &:hover {
         background-color: ${({theme}) => theme.text_secondary + 50};
+        width : 88%;
     }
 `;
 
