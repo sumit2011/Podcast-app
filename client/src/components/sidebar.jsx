@@ -142,7 +142,7 @@ const Sidebar = ({menuOpen ,setMenuOpen,setDarkMode, darkMode}) => {
             </Link> 
             ))}
 
-            <HR/>
+            {/* <HR/> */}
 
             {Button.map((item) => (
                 <Elements onClick={item.fun}>
