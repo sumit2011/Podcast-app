@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {HomeRounded, CloseRounded, UploadRounded, DashboardRounded, SearchRounded, FavoriteRounded, LoginRounded, LightModeRounded, DarkModeRounded} from "@mui/icons-material"
-import LogoImage from "../images/logo.png";
+import LogoImage from "../images/photo.png";
 import {Link} from "react-router-dom";
 
 const MenuContainer = styled.div`
@@ -128,7 +128,7 @@ const Sidebar = ({menuOpen ,setMenuOpen,setDarkMode, darkMode}) => {
             <Flex>
                 <Logo>
                     <Image src={LogoImage} />
-                    Podcast</Logo>
+                    </Logo>
                 <Close onClick={() => setMenuOpen(false)}>
                 <CloseRounded/>
                 </Close>

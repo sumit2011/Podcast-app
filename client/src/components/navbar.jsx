@@ -2,11 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import {Menu , PersonRounded} from "@mui/icons-material"; 
 import { IconButton } from "@mui/material";
+import Logo from "../images/photo.png";
+import { DarkModeRounded, LightModeRounded } from "@mui/icons-material";
+
 
 const NavbarDiv = styled.div`
     display: flex;
     justify-content: space-between;
     // width: 100%;
+    
     padding: 16px 40px;
     align-items: center;
     color: ${({ theme }) => theme.text_primary};
@@ -16,6 +20,7 @@ const NavbarDiv = styled.div`
     backdrop-filter: blur(5.7px);
     -webkit-backdrop-filter: blur(5.7px);
     @media (max-width: 768px){
+        height: 40px;
         padding: 16px;
     }
 `;
@@ -40,13 +45,36 @@ const IconBtn = styled(IconButton)`
 
 `;
 
-const NavBar = ({setMenuOpen , menuOpen}) => {
+const Elements = styled.div`
+    padding: 4px 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    width: 100%;
+`;
+
+const NavBar = ({setMenuOpen , menuOpen, setDarkMode, darkMode}) => {
+
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+    };
+
     return (
         <NavbarDiv>
             <IconBtn onClick={() => setMenuOpen(!menuOpen)}>
                 <Menu/> 
             </IconBtn>
+            <img src={Logo} alt="logo" style={{height: "50px" }}/>
+
+            <Elements onClick={toggleDarkMode}>
+                {darkMode ? <LightModeRounded /> : <DarkModeRounded />}
+            </Elements>
+
             <ButtonDiv>
+           
                 <PersonRounded />
                 Login
             </ButtonDiv>

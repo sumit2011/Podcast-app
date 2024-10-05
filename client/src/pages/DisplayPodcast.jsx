@@ -1,7 +1,9 @@
 import React from 'react'
 
-export const DisplayPodcast = () => {
+const DisplayPodcast = () => {
   return (
     <div>DisplayPodcast</div>
   )
 }
+
+export default DisplayPodcast
