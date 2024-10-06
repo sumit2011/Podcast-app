@@ -84,7 +84,14 @@ const HR = styled.div`
 `;
 
 
+const Footer = styled.div`
+    margin-top: 400px;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    
+    margin-bottom: 0px;
 
+`;
 
 const Sidebar = ({menuOpen ,setMenuOpen,setDarkMode, darkMode}) => {
     const MenuItems = [
@@ -151,6 +158,9 @@ const Sidebar = ({menuOpen ,setMenuOpen,setDarkMode, darkMode}) => {
                 </Elements>
             ))}
             
+            {/* <Footer>
+                made with love by sumit.
+            </Footer> */}
 
         </MenuContainer>
 

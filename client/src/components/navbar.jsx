@@ -55,6 +55,7 @@ const Elements = styled.div`
     gap: 12px;
     cursor: pointer;
     width: 100%;
+    color: ${({ theme }) => theme.text_secondary};
 `;
 
 const NavBar = ({setMenuOpen , menuOpen, setDarkMode, darkMode}) => {
@@ -75,7 +76,6 @@ const NavBar = ({setMenuOpen , menuOpen, setDarkMode, darkMode}) => {
             </Elements>
 
             <ButtonDiv>
-           
                 <PersonRounded />
                 Login
             </ButtonDiv>

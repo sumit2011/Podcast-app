@@ -46,13 +46,16 @@ const Span = styled.div`
     font-size: 14px;
   }
 `;
+
 const Podcasts = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
   padding: 18px 6px;
+  
   @media (max-width: 550px){
     justify-content: center;
+    overflow-x: scroll;
   }
 `;
 
@@ -74,6 +77,10 @@ const Dashboard = () => {
           <PodcastCard/>
           <PodcastCard/>
           <PodcastCard/>
+          <PodcastCard/>
+          <PodcastCard/>
+          <PodcastCard/>
+          <PodcastCard/>
          
           
         </Podcasts>
@@ -90,7 +97,6 @@ const Dashboard = () => {
           <PodcastCard/>
           <PodcastCard/>
           <PodcastCard/>
-          HI
         </Podcasts>
       </FilterContainer>
     </DashboardMain>
