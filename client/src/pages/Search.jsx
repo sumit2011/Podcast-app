@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import SearchOutlinedIcon from "@mui/icons-material/SearchOffOutlined"
+import { Category } from '../utils/Data';
+import { DefaultCard } from '../components/DefaultCard';
+import { Link } from 'react-router-dom';
+
 
 const SearchMain = styled.div`
+
+
   padding: 20px 30px;
   padding-bottom: 200px;
   height: 100%;
@@ -28,15 +34,43 @@ const SearchBar = styled.div`
   color: ${({theme}) => theme.text_secondary};
 
 `;
-// const SearchOutlinedIcon = styled.div``;
+const Categories = styled.div`
+  margin: 20px 10px;
+`;
+const Heading = styled.div`
+  align-items: flex-start;
+
+  color: ${({theme}) => theme.text_primary};
+  font-size: 22px;
+  font-weight: 540;
+  margin: 10px 14px;
+
+`;
+
+const BrowseAll = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 14px;
+`;
 
 
-const search = () => {
+
+const Search = () => {
+
+  const [searched, setSearched] =useState("");
+
+  const handleChange = async (e) => {
+    setSearched(e.target.value);
+  };
+
   return (
     <SearchMain>
+
       <div style={{
         display: "flex", justifyContent: "center", width: "100%",
       }}>
+
         <SearchBar>
             <SearchOutlinedIcon  sx={{color: "inherit"}} />
             <input 
@@ -49,12 +83,31 @@ const search = () => {
               background: "inherit",
               color: "inherit",
             }}
+            value = {searched}
+            onChange={(e) => handleChange(e)}
             />
         </SearchBar>
       </div>
+      {searched === "" ? (
+        <Categories>
+          <Heading>Browse all</Heading>
+          <BrowseAll>
+          {Category.map((category) => (
+            <Link to={'/showpodcasts/${category.name.toLowerCase()}'} style={{
+              textDecoration: "none"
+            }}
+            >
+              <DefaultCard category={category} />
+            </Link>
+          ))}
+          </BrowseAll>
+        </Categories>
+      ) : (
+        <>hi</>
+      )}
         
     </SearchMain>
   )
 }
 
-export default search
+export default Search
